@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Covid Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}" />
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS 
+    https://img.etimg.com/thumb/msid-77552658,width-1070,height-580,imgsize-542487,overlay-economictimes/photo.jpg
+    https://mdbootstrap.com/img/Photos/Others/images/76.jpg
+    https://newseu.cgtn.com/news/2020-09-29/The-different-types-of-COVID-19-tests-and-how-they-compare-Ua1eRDn94c/img/578b344bed5845a78794426100499891/578b344bed5845a78794426100499891-1920.png
+  -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <div class="bg-image" 
+     style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            height: 100vh">
+  <div class="main">
+    <div class="title">
+      <h3 class="mt-5">Covid-19 X-Rays Detector</h3>
+
+    </div>
+
+    <div class="panel">
+      <input id="file-upload" class="hidden" type="file" accept="image/x-png,image/gif,image/jpeg" />
+      <label for="file-upload" id="file-drag" class="upload-box">
+        <div id="upload-caption">Drop image here or click to select</div>
+        <img id="image-preview" class="hidden" />
+      </label>
+    </div>
+    <div style="margin-bottom: 2rem;">
+	
+      <input type="button" class="btn btn-dark btn-lg" value="Submit" class="button" onclick="submitImage();" />
+      <input type="button" class="btn btn-dark btn-lg" value="Clear" class="button" onclick="clearImage();" />
+      
+
+    </div>
+    <div style="margin-bottom: 2rem;">
+      <form action="https://covid19.who.int/table" method="post">
+        <!--https://covid19.who.int/-->
+        <input type="submit" value="Live Covid-19 Dashboard"/>
+      </form>
+    </div>
+
+
+    <div id="image-box">
+      <img id="image-display" />
+      <div id="pred-result" class="hidden"></div>
+      <svg id="loader" class="hidden" viewBox="0 0 32 32" width="32" height="32">
+        <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+      </svg>
+    </div>
+  </div>
+  <div style="position: relative; float: left;">    
+    <div style="position: static; bottom: 15px;">
+    <h3 class="mt-5">
+      Developed by -
+    </h3> 
+    <h4>Sanjay Sherkhane. </h4>
+    <h4>Ashutosh kamble.</h4>
+    <h4>Saurabh Gawade.</h4>
+    <h4>Shreyansh Gupta.</h4>     
+    </div>
+</div>
+
+<div style="position: relative; float: right;">    
+  <div style="position: static; bottom: 15px;">
+  <h3 class="mt-5"> 
+    Guided by -
+  </h3>
+  <h4> 
+    Mrs. Shubhnagi Kale.
+  </h4>
+  
+  </div>
+</div>
+
+  </div>
+  <footer>
+    <script src="{{ url_for('static',filename='main.js') }}"></script>
+  </footer>
+  
+</html>
+
+
